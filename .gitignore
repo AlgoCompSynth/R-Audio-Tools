@@ -47,3 +47,9 @@ po/*~
 
 # RStudio Connect folder
 rsconnect/
+
+# Distrobox stuff
+distrobox.ini
+*.log
+acs-1-save
+acs-1-save.zip
