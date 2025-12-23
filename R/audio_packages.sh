@@ -2,6 +2,7 @@
 
 set -e
 
+mkdir --parents $PWD/Logs
 export LOGFILE=$PWD/Logs/audio_packages.log
 rm --force $LOGFILE
 

@@ -2,7 +2,7 @@
 
 set -e
 
-source ../set_container_envars.sh
+mkdir --parents $PWD/Logs
 export LOGFILE=$PWD/Logs/Positron.log
 rm --force $LOGFILE
 

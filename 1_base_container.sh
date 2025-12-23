@@ -3,7 +3,7 @@
 set -e
 
 echo ""
-echo "* Create Container *"
+echo "* Base Container *"
 
 mkdir --parents $PWD/Logs
 export LOGFILE=$PWD/Logs/create_container.log
@@ -39,6 +39,12 @@ echo "Entering $DBX_CONTAINER_NAME to configure the"
 echo "keyboard and set a password."
 sleep 10
 
-distrobox enter "$DBX_CONTAINER_NAME" -- ./Scripts/personalize.sh
+distrobox enter "$DBX_CONTAINER_NAME" -- ./System/personalize.sh
+distrobox enter "$DBX_CONTAINER_NAME" -- ./System/apt_system_upgrade.sh
+distrobox enter "$DBX_CONTAINER_NAME" -- ./System/apt_base_packages.sh
+distrobox enter "$DBX_CONTAINER_NAME" -- ./System/terminal_setup.sh
+distrobox enter "$DBX_CONTAINER_NAME" -- ./R/R_setup.sh
+distrobox enter "$DBX_CONTAINER_NAME" -- ./R/Positron.sh
+distrobox enter "$DBX_CONTAINER_NAME" -- ./System/apt_pkg_db_updates.sh
 
-echo "* Create Container Finished *"
+echo "* Base Container Finished *"

@@ -2,11 +2,12 @@
 
 set -e
 
+mkdir --parents $PWD/Logs
 export LOGFILE=$PWD/Logs/R_setup.log
 rm --force $LOGFILE
 
 echo "Setting R profiles HOME/.Rprofile and HOME/.Renviron"
-cp Rprofile $HOME/.Rprofile
+cp ./R/Rprofile $HOME/.Rprofile
 # https://forum.posit.co/t/timedatectl-had-status-1/72060/5
 echo $(set | grep ^TZ) >> $HOME/.Renviron
 

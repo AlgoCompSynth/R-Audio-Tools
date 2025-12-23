@@ -13,8 +13,8 @@ export DEBIAN_FRONTEND=noninteractive
 echo "Update"
 sudo apt-get update \
   >> $LOGFILE 2>&1
-echo "Full upgrade"
-sudo apt-get full-upgrade --assume-yes \
+echo "Upgrade"
+sudo apt-get dist-upgrade --assume-yes \
   >> $LOGFILE 2>&1
 echo "Autoremove"
 sudo apt-get autoremove --assume-yes \
