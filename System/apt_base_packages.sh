@@ -3,14 +3,10 @@
 set -e
 
 echo ""
-echo "*** Base Packages ***"
-
-mkdir --parents "$PWD/Logs"
-export LOGFILE="$PWD/Logs/base_packages.log"
-rm --force $LOGFILE
+echo "** Base Packages **"
 
 export DEBIAN_FRONTEND=noninteractive
-sudo apt-get install --assume-yes --no-install-recommends \
+sudo apt-get install -qqy --no-install-recommends \
   apt-file \
   bash-completion \
   build-essential \
@@ -41,4 +37,4 @@ sudo apt-get install --assume-yes --no-install-recommends \
   wget \
   >> $LOGFILE 2>&1
 
-echo "*** Finished ***"
+echo "** Finished Base Packages **"

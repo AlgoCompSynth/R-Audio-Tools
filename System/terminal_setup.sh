@@ -3,7 +3,7 @@
 set -e
 
 echo ""
-echo "*** Terminal Setup ***"
+echo "** Terminal Setup **"
 
 echo "Creating \$HOME/Projects, \$HOME/.local/bin, and \$HOME/bin"
 mkdir --parents $HOME/Projects
@@ -26,4 +26,4 @@ echo 'eval "$(starship init bash)"' >> $HOME/.bashrc
 echo "Installing nerd font with ligatures"
 ./System/nerd_fonts.sh
 
-echo "*** Finished ***"
+echo "** Finished Terminal Setup **"

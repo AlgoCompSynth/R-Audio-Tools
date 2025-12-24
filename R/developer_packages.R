@@ -21,5 +21,3 @@ install.packages(to_install, quiet = TRUE, repos = "https://cloud.r-project.org/
 warnings()
 cat("\nInstalling TinyTeX\n")
 tinytex::install_tinytex(force = TRUE)
-cat("\nInstalling rextendr\n")
-remotes::install_github("extendr/rextendr")

@@ -3,7 +3,7 @@
 set -e
 
 echo ""
-echo "*** Package Database Updates ***"
+echo "** Package Database Updates **"
 
 mkdir --parents $PWD/Logs
 export LOGFILE=$PWD/Logs/pkg_db_updates.log
@@ -21,4 +21,4 @@ echo "Updating manual database"
 sudo mandb \
   >> $LOGFILE 2>&1
 
-echo "*** Finished ***"
+echo "** Finished Package Database Updates **"

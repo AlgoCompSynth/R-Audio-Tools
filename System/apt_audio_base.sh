@@ -3,15 +3,12 @@
 set -e
 
 echo ""
-echo "*** Audio Base Packages ***"
-
-mkdir --parents "$PWD/Logs"
-export LOGFILE="$PWD/Logs/audio_base.log"
-rm --force $LOGFILE
+echo "** Audio Base Packages **"
 
 export DEBIAN_FRONTEND=noninteractive
-sudo apt-get install --assume-yes --no-install-recommends \
+sudo apt-get install -qqy --no-install-recommends \
   alsa-utils \
+  ffmpeg \
   flac \
   libsox-fmt-all \
   libsox-dev \
@@ -19,10 +16,9 @@ sudo apt-get install --assume-yes --no-install-recommends \
   libsoxr-dev \
   libsoxr0 \
   mp3splt \
-  pipewire-doc \
   pmidi \
   rtkit \
   sox \
   >> $LOGFILE 2>&1
 
-echo "*** Finished ***"
+echo "** Finished Audio Base Packages **"

@@ -3,14 +3,10 @@
 set -e
 
 echo ""
-echo "*** Command Line Synths ***"
-
-mkdir --parents "$PWD/Logs"
-export LOGFILE="$PWD/Logs/command_line_synths.log"
-rm --force $LOGFILE
+echo "** Command Line Synths **"
 
 export DEBIAN_FRONTEND=noninteractive
-/usr/bin/time sudo apt-get install --assume-yes --no-install-recommends \
+/usr/bin/time sudo apt-get install -qqy --no-install-recommends \
   ffmpeg \
   fluid-soundfont-gm \
   fluid-soundfont-gs \
@@ -20,4 +16,4 @@ export DEBIAN_FRONTEND=noninteractive
   timidity-daemon \
   >> $LOGFILE 2>&1
 
-echo "*** Finished ***"
+echo "** Finished Command Line Synths **"

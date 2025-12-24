@@ -4,5 +4,4 @@ alias browse_to_rstudio="distrobox-host-exec xdg-open http://localhost:8787"
 
 export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/vim
-export TZ=America/Los_Angeles
 export PATH=$PATH:$HOME/.local/bin:$HOME/bin

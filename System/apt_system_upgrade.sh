@@ -3,21 +3,17 @@
 set -e
 
 echo ""
-echo "*** System Upgrade ***"
-
-mkdir --parents "$PWD/Logs"
-export LOGFILE="$PWD/Logs/system_upgrade.log"
-rm --force $LOGFILE
+echo "** System Upgrade **"
 
 export DEBIAN_FRONTEND=noninteractive
 echo "Update"
-sudo apt-get update \
+sudo apt-get update -qq \
   >> $LOGFILE 2>&1
 echo "Upgrade"
-sudo apt-get dist-upgrade --assume-yes \
+sudo apt-get dist-upgrade -qqy \
   >> $LOGFILE 2>&1
 echo "Autoremove"
-sudo apt-get autoremove --assume-yes \
+sudo apt-get autoremove -qqy \
   >> $LOGFILE 2>&1
 
-echo "*** Finished ***"
+echo "** Finished System Upgrade **"

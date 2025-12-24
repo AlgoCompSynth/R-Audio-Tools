@@ -2,9 +2,8 @@
 
 set -e
 
-mkdir --parents $PWD/Logs
-export LOGFILE=$PWD/Logs/R_setup.log
-rm --force $LOGFILE
+echo ""
+echo "** R Setup **"
 
 echo "Setting R profiles HOME/.Rprofile and HOME/.Renviron"
 cp ./R/Rprofile $HOME/.Rprofile
@@ -16,3 +15,5 @@ echo "Installing bibtool and qpdf"
   bibtool \
   qpdf \
   >> $LOGFILE 2>&1
+
+echo "** Finished R Setup **"
