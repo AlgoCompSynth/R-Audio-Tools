@@ -3,7 +3,7 @@
 set -e
 
 echo ""
-echo "* Developer Packages *"
+echo "* Audio Packages *"
 
 echo "Setting environment variables"
 source set_container_envars.sh
@@ -19,4 +19,4 @@ echo "Installing R audio packages - this takes some time."
 /usr/bin/time distrobox enter "$DBX_CONTAINER_NAME" -- ./R/audio_packages.R \
   >> $LOGFILE 2>&1
 
-echo "* Developer Packages Finished *"
+echo "* Audio Packages Finished *"
